@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "404560975268",
+    "project_id": "medikit-67191",
+    "storage_bucket": "medikit-67191.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:404560975268:android:3562b195ee4bfbb1f31d31",
+        "android_client_info": {
+          "package_name": "com.project22.medikit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "404560975268-kjuct26fevtsvs6tqauf8gag8gp9fvib.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkjIXGLO8MPAIc33_xgyH1xBdTEeDMLjY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "404560975268-kjuct26fevtsvs6tqauf8gag8gp9fvib.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

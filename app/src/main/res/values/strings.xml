@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Medikit</string>
+    <string name="gotologin"><u>Log in to your existing account</u></string>
+    <string name="gotosignup"><u>Don\'t have an account</u><i>?</i><b> SignUp</b></string>
+</resources>

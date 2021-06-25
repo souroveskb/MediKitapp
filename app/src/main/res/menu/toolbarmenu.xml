@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_itemAdd"
+        android:orderInCategory="100"
+        android:title="Add"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_itemSettings"
+        android:orderInCategory="100"
+        android:title="Settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_itemGenerate"
+        android:orderInCategory="100"
+        android:title="Generate"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_itemLogout"
+        android:orderInCategory="100"
+        android:title="LogOut"
+        app:showAsAction="never" />
+
+
+</menu>

@@ -33,8 +33,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     
     //userData
     private String name, age, email, password;
-    public static String info = "userinfo";
-    public static String collectionName = "Users";
+    public static String initialCollectionName = "Users";
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +60,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View view) {
 
         if(signUpBinding.signuptitleTV.equals(view)){
-            Toast.makeText(this, "Medikit App", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "MedikitApplication", Toast.LENGTH_SHORT).show();
         } else if(signUpBinding.gologinTV.equals(view)){
             Tologinactivity();
         
@@ -127,13 +126,13 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
-                        User user = new User(name, age, email);
+                        //User user = new User(name, age, email);
                         Map<String, Object> usermap = new HashMap<>();
                         usermap.put("name", name);
                         usermap.put("age", age);
                         usermap.put("email",email);
                         //usermap.put(info, user);
-                        firestore.collection(collectionName).document(email).set(usermap)
+                        firestore.collection(initialCollectionName).document(email).set(usermap)
                                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {

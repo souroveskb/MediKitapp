@@ -2,4 +2,6 @@
     <string name="app_name">Medikit</string>
     <string name="gotologin"><u>Log in to your existing account</u></string>
     <string name="gotosignup"><u>Don\'t have an account</u><i>?</i><b> SignUp</b></string>
+    <string name="logoutconfirmation">Do you want to log out?</string>
+    <string name="setAlarm"><u><b>Set Alarm</b></u></string>
 </resources>

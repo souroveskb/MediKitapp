@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,24 +17,22 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
+import com.project22.medikit.AddEditMedicine.AddMedicineActivity;
 import com.project22.medikit.DataModels.User;
 import com.project22.medikit.FirebaseAuth.LogInActivity;
 import com.project22.medikit.R;
 import com.project22.medikit.RecyclerViewAdapter.UserAdapter;
-import com.project22.medikit.databinding.ActivityHomeBinding;
+import com.project22.medikit.databinding.ActivityHomeUserBinding;
 
-import java.util.Queue;
+import static com.project22.medikit.FirebaseAuth.SignUpActivity.initialCollectionName;
 
-import static com.project22.medikit.FirebaseAuth.LogInActivity.userID_email;
-import static com.project22.medikit.FirebaseAuth.SignUpActivity.collectionName;
-
-public class HomeActivity extends AppCompatActivity implements View.OnClickListener{
+public class HomeActivityUser extends AppCompatActivity implements View.OnClickListener {
 
     //view binding to bind the views
-    private ActivityHomeBinding homeBinding;
+    private ActivityHomeUserBinding homeBinding;
 
     //firebase
-    private FirebaseAuth firebaseAuth ;
+    private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firestore;
     private CollectionReference reference;
 
@@ -45,14 +42,14 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        homeBinding = ActivityHomeBinding.inflate(getLayoutInflater());
+        homeBinding = ActivityHomeUserBinding.inflate(getLayoutInflater());
         setContentView(homeBinding.getRoot());
         setTitle("Home");
 
         //firebase initialize
         firebaseAuth = FirebaseAuth.getInstance();
         firestore = FirebaseFirestore.getInstance();
-        reference = firestore.collection(collectionName);
+        reference = firestore.collection(initialCollectionName);
 
         //check user
         checkuser();
@@ -90,11 +87,13 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
+    //if user is already logged in or not
+    //and set the userID_email
     private void checkuser() {
-        if(firebaseAuth.getCurrentUser() != null){
-            Toast.makeText(this, "Home: " + userID_email, Toast.LENGTH_SHORT).show();
+        if (firebaseAuth.getCurrentUser() != null) {
+            Toast.makeText(this, "Home: " , Toast.LENGTH_SHORT).show();
         } else {
-            startActivity(new Intent(HomeActivity.this, LogInActivity.class));
+            startActivity(new Intent(HomeActivityUser.this, LogInActivity.class));
             finish();
         }
     }
@@ -102,14 +101,12 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     //onclick listener method
     @Override
     public void onClick(View view) {
-        if(homeBinding.homefloatingbutton.equals(view)){
-            startActivity(new Intent(HomeActivity.this, AddMedicineActivity.class));
-        }else {}
+        if (homeBinding.homefloatingbutton.equals(view)) {
+            startActivity(new Intent(HomeActivityUser.this, AddMedicineActivity.class));
+        } else {
+        }
 
     }
-
-
-
 
 
     //toolbar menu onitem select
@@ -124,23 +121,18 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         int id = item.getItemId();
-
-        if(id == R.id.menu_itemAdd){
-            Toast.makeText(this, "addmenuclicked!", Toast.LENGTH_SHORT).show();
-        } else if(id == R.id.menu_itemSettings){
-            Toast.makeText(this, "settingsclicked!", Toast.LENGTH_SHORT).show();
-        } else if(id == R.id.menu_itemLogout){
-            Toast.makeText(this, "logoutmenu!", Toast.LENGTH_SHORT).show();
+        if (id == R.id.menu_itemLogout) {
             logout();
-        } else if(id == R.id.menu_itemGenerate){
-            Toast.makeText(this, "generatemenuclicked!", Toast.LENGTH_SHORT).show();
-        } else{}
+            Toast.makeText(this, "logout!", Toast.LENGTH_SHORT).show();
+        } else {
+        }
         return super.onOptionsItemSelected(item);
     }
 
+    //logout function
     private void logout() {
         firebaseAuth.signOut();
-        startActivity(new Intent(HomeActivity.this, LogInActivity.class));
+        startActivity(new Intent(HomeActivityUser.this, LogInActivity.class));
         finish();
     }
 

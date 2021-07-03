@@ -4,144 +4,143 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FirebaseAuth.SignUpActivity">
+    tools:context=".FirebaseAuth.SignUpActivity"
+    android:background="@drawable/trianglebackground">
 
-    <ScrollView
-        android:id="@+id/scrollViewsignup"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+
+        <TextView
+            android:id="@+id/signuptitleTV"
+            style="@style/TextAppearance.MaterialComponents.Headline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="Sign up"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Create a new account"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+
+        <!--name-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signupname"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="20dp">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="75dp"
+            android:layout_marginBottom="8dp">
 
-            <TextView
-                android:id="@+id/signuptitleTV"
-                style="@style/TextAppearance.MaterialComponents.Headline3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:text="SignUp"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
-
-            <TextView
-                style="@style/TextAppearance.MaterialComponents.Caption"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Create a new account"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-
-
-            <!--name-->
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/signupname"
+            <EditText
+                android:id="@+id/signupnameET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="75dp"
-                android:layout_marginBottom="8dp">
+                android:background="@drawable/smoothcorner"
+                android:hint="Name"
+                android:inputType="text" />
 
-                <EditText
-                    android:id="@+id/signupnameET"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/smoothcorner"
-                    android:hint="Name"
-                    android:inputType="text"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
-            </com.google.android.material.textfield.TextInputLayout>
+        <!--age-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signupage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
 
-            <!--age-->
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/signupage"
+            <EditText
+                android:id="@+id/signupageET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp">
+                android:background="@drawable/smoothcorner"
+                android:hint="Age"
+                android:inputType="number" />
 
-                <EditText
-                    android:id="@+id/signupageET"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/smoothcorner"
-                    android:hint="Age"
-                    android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-            </com.google.android.material.textfield.TextInputLayout>
+        <!--email-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signupemail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp">
 
-            <!--email-->
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/signupemail"
+            <EditText
+                android:id="@+id/signupemailET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp">
+                android:background="@drawable/smoothcorner"
+                android:hint="Email"
+                android:inputType="textEmailAddress" />
 
-                <EditText
-                    android:id="@+id/signupemailET"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/smoothcorner"
-                    android:hint="Email"
-                    android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-            </com.google.android.material.textfield.TextInputLayout>
+        <!--password-->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/signuppassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            app:passwordToggleEnabled="true">
 
-            <!--password-->
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/signuppassword"
+            <EditText
+                android:id="@+id/signuppasswordET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                app:passwordToggleEnabled="true">
+                android:background="@drawable/smoothcorner"
+                android:hint="Password"
+                android:inputType="textPassword" />
 
-                <EditText
-                    android:id="@+id/signuppasswordET"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/smoothcorner"
-                    android:hint="Password"
-                    android:inputType="textPassword" />
-
-            </com.google.android.material.textfield.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-            <!--signup button-->
-            <Button
-                android:id="@+id/signupbtn"
-                android:layout_width="wrap_content"
-                android:layout_height="55dp"
-                android:layout_marginTop="45dp"
-                android:text="SignUp"
-                android:textSize="20sp" />
+        <!--signup button-->
+        <Button
+            android:id="@+id/signupbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_marginTop="45dp"
+            android:text="Sign up"
+            android:textAllCaps="false"
+            android:textSize="20sp" />
 
 
-            <TextView
-                android:id="@+id/gologinTV"
-                style="@style/TextAppearance.MaterialComponents.Caption"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="110dp"
-                android:text="@string/gotologin"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
+        <TextView
+            android:id="@+id/gologinTV"
+            style="@style/TextAppearance.MaterialComponents.Caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp"
+            android:text="@string/gotologin"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
 
-        </LinearLayout>
-    </ScrollView>
+    </LinearLayout>
+
 
     <ProgressBar
         android:id="@+id/signupProgressbar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         android:padding="25dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

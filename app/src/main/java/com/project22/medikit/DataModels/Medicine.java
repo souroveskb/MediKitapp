@@ -1,33 +1,35 @@
 package com.project22.medikit.DataModels;
 
-import android.text.format.Time;
-
-import java.util.ArrayList;
 
 public class Medicine {
-    private String medicinename, type, dose;
-    private ArrayList<Time> alarmtime;
+    private String medicinename, medicinetype, medicinedose;
+    private String time;
 
-    public Medicine(String medicinename, String type, String dose, ArrayList<Time> alarmtime) {
+    public Medicine() {
+    }
+
+
+    public Medicine(String medicinename, String medicinetype, String medicinedose, String time) {
         this.medicinename = medicinename;
-        this.type = type;
-        this.dose = dose;
-        this.alarmtime = alarmtime;
+        this.medicinetype = medicinetype;
+        this.medicinedose = medicinedose;
+        this.time = time;
+    }
+
+    public String getTime() {
+        return time;
     }
 
     public String getMedicinename() {
         return medicinename;
     }
 
-    public String getType() {
-        return type;
+    public String getMedicinetype() {
+        return medicinetype;
     }
 
-    public String getDose() {
-        return dose;
+    public String getMedicinedose() {
+        return medicinedose;
     }
 
-    public ArrayList<Time> getAlarmtime() {
-        return alarmtime;
-    }
 }

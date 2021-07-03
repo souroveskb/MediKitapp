@@ -1,7 +1,6 @@
 package com.project22.medikit.FirebaseAuth;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -14,11 +13,9 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.FirebaseFirestore;
-import com.project22.medikit.HomeActivity.HomeActivity;
+import com.project22.medikit.HomeActivity.HomeActivityMedicine;
+import com.project22.medikit.HomeActivity.HomeActivityUser;
 import com.project22.medikit.databinding.ActivityLoginBinding;
-
-import javax.security.auth.login.LoginException;
 
 public class LogInActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -33,6 +30,7 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
 
     //firestore document id set as email
     public static String userID_email;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +47,7 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         //if already logged in
         checkUser();
 
+
         //onclick listener set
         loginBinding.gosignupTV.setOnClickListener(this);
         loginBinding.loginbtn.setOnClickListener(this);
@@ -59,9 +58,9 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
     private void checkUser() {
 
         if(firebaseAuth.getCurrentUser() != null){
+            startActivity(new Intent(LogInActivity.this, HomeActivityMedicine.class));
             userID_email = firebaseAuth.getCurrentUser().getEmail();
             //Toast.makeText(this, "ID: " +userID_email, Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(LogInActivity.this, HomeActivity.class));
             finish();
         } else {}
     }
@@ -113,8 +112,8 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
                     public void onSuccess(AuthResult authResult) {
                         loginBinding.loginProgressbar.setVisibility(View.GONE);
                         //userID_email = email;
-                        Toast.makeText(LogInActivity.this, "Logged in successfully!" + "\n" + userID_email, Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(LogInActivity.this, HomeActivity.class));
+                        Toast.makeText(LogInActivity.this, "Logged in successfully!" + "\n" , Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(LogInActivity.this, HomeActivityMedicine.class));
                         finish();
                     }
                 })

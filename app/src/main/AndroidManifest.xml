@@ -9,10 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Medikit">
-        <activity android:name=".HomeActivity.AddMedicineActivity"
-            android:parentActivityName=".HomeActivity.HomeActivity"></activity>
-        <activity android:name=".HomeActivity.HomeActivity" />
-        <activity android:name=".FirebaseAuth.SignUpActivity"/>
+        <activity android:name=".AddEditMedicine.EditMedicineActivity"
+            android:parentActivityName=".HomeActivity.HomeActivityMedicine"></activity>
+        <activity
+            android:name=".HomeActivity.HomeActivityMedicine"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".AddEditMedicine.AddMedicineActivity"
+            android:parentActivityName=".HomeActivity.HomeActivityMedicine" />
+        <activity android:name=".HomeActivity.HomeActivityUser" />
+        <activity android:name=".FirebaseAuth.SignUpActivity" />
         <activity android:name=".FirebaseAuth.LogInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,6 +26,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <receiver android:name=".AlarmReceiver.AlarmBroadcastReceiver" />
     </application>
 
 </manifest>

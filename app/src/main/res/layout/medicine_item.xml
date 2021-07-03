@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginTop="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="5dp">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_variation2">
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+
+    <LinearLayout
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvitemname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:text="Medicine: "
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/itemmedicinenameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:text="medicine"
+                android:layout_marginStart="8dp"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvitemtype"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:text="Type: "
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/itemmedicinetypeTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:text="type"
+                android:layout_marginStart="30dp"/>
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvitemdose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:text="Dose: "
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/itemmedicinedoseTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:text="dose"
+                android:layout_marginStart="30dp"/>
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+        <TextView
+            android:id="@+id/time_alarm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:padding="5dp"
+            android:layout_marginLeft="05dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/gradient_variation3"
+            android:layout_gravity="center"/>
+
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/ivitemedit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/linear1"
+        android:visibility="gone"
+        android:padding="5dp"
+        android:layout_marginBottom="3dp"
+        android:background="@drawable/gradient_variation3"
+        android:src="@drawable/ic_edit"
+        app:tint="@color/white" />
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

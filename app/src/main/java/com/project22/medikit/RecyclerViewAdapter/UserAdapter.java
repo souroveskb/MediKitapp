@@ -37,9 +37,9 @@ public class UserAdapter extends FirestoreRecyclerAdapter<User, UserAdapter.User
 
     class UserHolder extends RecyclerView.ViewHolder{
 
-        TextView nameTV;
-        TextView ageTV;
-        TextView emailTV;
+        private TextView nameTV;
+        private TextView ageTV;
+        private TextView emailTV;
 
         public UserHolder(@NonNull View itemView) {
             super(itemView);
